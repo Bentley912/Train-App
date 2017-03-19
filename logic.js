@@ -53,7 +53,7 @@ function pushTrain(train){
   var firstTimeConverted = moment(train.firstTime, "hh:mm").subtract(1, "years");
 
   var diffTime = moment().diff(moment(firstTimeConverted), "hours");
-  console.log (firstTimeConverted);
+  console.log ();
   console.log(diffTime);
 
   var tRemainder = diffTime % tFrequency;
@@ -70,7 +70,7 @@ function pushTrain(train){
 		name+"</td><td>"+
 		destination+"</td><td>"+
 		tFrequency+"</td><td>"+
-    nextTrain + "</td><td> "+
+    moment(nextTrain).format("hh:mm") + "</td><td> "+
     tMinutesTillTrain + '</td>'
 	)
 }
